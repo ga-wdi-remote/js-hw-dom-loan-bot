@@ -86,9 +86,7 @@ var loanBot = {
 
   accrue: function() {
     for (var account in this.accounts) {
-      let currentAccount = this.accounts[account]
-
-      currentAccount = currentAccount * (1 + this.rate);
+      this.accounts[account] = this.accounts[account] * (1 + this.rate);
     }
 
     return `LoanBot collects interest at ${this.rate * 100}% <br> ${ this.ledger() }`
